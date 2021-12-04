@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.huang.dao.PaymentMapper">
+    <resultMap id="payMap" type="com.huang.aaa.Payment">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <id column="detail" property="detail" jdbcType="VARCHAR"/>
+    </resultMap>
+    <select id="queryPayById" resultMap="payMap">
+        select * from payment where id = #{id}
+    </select>
+
+
+    <insert id="addPay" parameterType="com.huang.aaa.Payment">
+        insert into payment values(default,#{detail})
+    </insert>
+</mapper>
