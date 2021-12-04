@@ -65,4 +65,10 @@ public class PaymentController {
         }
         return new CommonResult<Payment>(4,"插入失败",new Payment(detail));
     }
+
+    @ResponseBody
+    @RequestMapping("/pay/circle")
+    public String circle(int id){
+        return paymentService.circleBreakTest(id);
+    }
 }

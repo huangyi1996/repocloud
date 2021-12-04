@@ -39,6 +39,11 @@ public class PaymentController {
         }
         return new CommonResult<Payment>(200,"查询成功ser"+port,paymentService.getPaymentById(id));
     }
+    @ResponseBody
+    @GetMapping("/pays1/{id}")
+    public CommonResult<Payment> r1(@PathVariable("id") int id){
+        return new CommonResult<Payment>(200,"查询成功ser"+port,paymentService.getPaymentById(id));
+    }
 
 
     @ResponseBody
